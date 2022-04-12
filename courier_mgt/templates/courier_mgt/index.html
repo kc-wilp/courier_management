@@ -1,0 +1,26 @@
+{% extends 'courier_mgt/layout.html' %}
+
+{% block content %}
+
+    <h2>My Bookings</h2>
+
+    <thead>
+        <TR>
+            <TH>Customer ID</TH>
+            <TH>Customer Name</TH>
+            <TH>Customer Email</TH>
+        </TR>
+    </thead>
+    <br> 
+    {% for customer in customers %}
+    <tbody>
+       <TR>
+        <TD>{{ customer.customer_id }} </TD>
+        <TD>{{ customer.customer_name }}</TD>
+        <TD>{{ customer.customer_email }}</TD>
+        <br>
+     </TR>
+    </tbody>
+
+    {% endfor %}
+{% endblock %}
