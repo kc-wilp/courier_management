@@ -2,5 +2,4 @@
 
 Team Members:
 
-* Kaustubh
 * Kaushik
