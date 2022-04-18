@@ -1,0 +1,22 @@
+{% extends 'courier_mgt/layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-section">
+    <div class="media">
+      <img class="rounded-circle account-img " style="width:auto; height:150px" src="{{ user.profile.image.url }}">
+      <div class="media-body">
+        <h2 class="account-heading">Profile for: {{ user.username }}</h2>
+        <p class="text-secondary">EMAIL: {{ user.email }}</p>
+      </div>
+    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ u_form | crispy }}
+        {{ p_form | crispy }}
+        <br>
+        <button class="btn btn-outline-info" type="Submit">Update</button>
+    </form>
+  </div>
+
+{% endblock %}

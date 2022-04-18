@@ -1,0 +1,13 @@
+{% extends 'courier_mgt/layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <!-- <input type="submit" value="Submit"> -->
+        <br>
+        <button class="btn btn-outline-info" type="Submit">Submit</button>
+    </form>
+
+{% endblock %}

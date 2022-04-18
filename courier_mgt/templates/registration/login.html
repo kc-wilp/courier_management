@@ -1,0 +1,17 @@
+{% extends 'courier_mgt/layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <!-- <input type="submit" value="Submit"> -->
+        <br>
+        <button class="btn btn-outline-info" type="Submit">Submit</button>
+    </form>
+
+    <div class = "border-top pt-2">
+        <a href="{% url 'site-register' %}" class="ml-2">Sign Up?</a>
+    </div>
+
+{% endblock %}

@@ -1,33 +1,31 @@
 {% extends 'courier_mgt/layout.html' %}
 
 {% block content %}
-        
 
+    <h2>My Bookings</h2>
 
     <thead>
         <TR>
-            <TH>SN.</TH>
             <TH>Booking ID</TH>
             <TH>Booking Name</TH>
             <TH>Booking Email</TH>
         </TR>
     </thead>
     <br> 
-    {% for booking in bookings %}
+
     <tbody>
        <TR>
-           
-        <TD> <a href="{{ booking.id }}"> No: {{ booking.id }} </a></TD>   
         <TD>{{ booking.booking_id }} </TD>
         <TD>{{ booking.booking_name }}</TD>
         <TD>{{ booking.booking_email }}</TD>
         <br>
      </TR>
     </tbody>
+    <br>
+    <br>
+    <a href="/{{booking.id }}/update">Update this booking</a>
+    <br>
+    <br>
+    <a href="/{{booking.id }}/delete">Delete this booking</a>
 
-    {% endfor %}
-    <br>
-    <br>
-    <br>
-    <a href="create/">Book a new Consignment</a>
 {% endblock %}

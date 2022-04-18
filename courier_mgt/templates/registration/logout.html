@@ -1,0 +1,11 @@
+{% extends 'courier_mgt/layout.html' %}
+
+{% block content %}
+
+<h2>You have been logged off</h2>
+
+<div class = "border-top pt-2">
+    <a href="{% url 'login' %}" class="ml-2">Login Again?</a>
+</div>
+
+{% endblock %}
