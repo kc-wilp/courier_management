@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'courier_mgt.apps.CourierMgtConfig',
+    'courier_mgt',
+    'staff'
     'crispy_forms',
 ]
 

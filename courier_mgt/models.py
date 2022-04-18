@@ -2,7 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 
-# Create your models here.
+
+
+
 class Bookings(models.Model):
     booking_id = models.IntegerField()
     booking_name = models.CharField(max_length=100)
@@ -13,6 +15,16 @@ class Bookings(models.Model):
     def __str__(self) -> str:
         return self.booking_name
     
+# Create your models here.
+class Consignment(models.Model):
+    consignment_id = models.OneToOneField(Bookings, on_delete=models.CASCADE)
+    complaint_id = models.IntegerField()
+    pick_up = models.CharField(max_length=100)
+    delivery_status = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return f'ConsignmentID:{self.consignment_id}'
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default= 'default.jpg', upload_to='profile_pics')

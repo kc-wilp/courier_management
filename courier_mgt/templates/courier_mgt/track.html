@@ -1,0 +1,31 @@
+{% extends 'courier_mgt/layout.html' %}
+
+{% block content %}
+        
+
+
+    <thead>
+        <TR>
+            <TH>Consignment ID</TH>
+            <TH>Consignment Handled By</TH>
+            <TH>Consignment Status</TH>
+        </TR>
+    </thead>
+    <br> 
+
+    <tbody>
+       <TR>
+             
+        <TD>{{ consignment.consignment_id }} </TD>
+        <TD>{{ consignment.pick_up }}</TD>
+        <TD>{{ consignment.delivery_status }}</TD>
+        <br>
+     </TR>
+    </tbody>
+
+
+    <br>
+    <br>
+    <br>
+    <a href="create/">Book a new Consignment</a>
+{% endblock %}

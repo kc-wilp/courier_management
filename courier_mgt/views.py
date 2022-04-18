@@ -12,6 +12,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 from .models import Bookings
+from .models import Consignment
 
 
 # Create your views here.
@@ -178,5 +179,16 @@ def booking_delete(request, id):
     booking.delete()
 
     return redirect('/')
+
+@login_required
+def booking_track(request, id):
+
+    consignment = Consignment.objects.get(consignment_id = id)
+    
+    context = {
+        'consignment': consignment
+    }
+
+    return render(request, 'courier_mgt/track.html', context)
 
     
